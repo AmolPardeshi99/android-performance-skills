@@ -1,0 +1,22 @@
+[
+  {"query": "LeakCanary keeps flagging OrdersFragment after navigating back, trace pasted below. what reference do I need to clear", "should_trigger": true},
+  {"query": "dumpsys meminfo shows Activities: 7 after I open and close the profile screen a few times. is something leaking? we use hilt and viewbinding", "should_trigger": true},
+  {"query": "please review ChatViewModel.kt and ChatFragment.kt for memory leaks before release, we use RxJava 3 and a CompositeDisposable but im not sure we clear it right", "should_trigger": true},
+  {"query": "our crash dashboard has a spike of OutOfMemoryError on the gallery screen on 3gb devices. here's the heap dump summary from Android Studio", "should_trigger": true},
+  {"query": "is it ok to keep the activity context inside a dagger @Singleton that wraps our location sdk? reviewer flagged it", "should_trigger": true},
+  {"query": "in compose I'm calling LocationSdk.addListener inside LaunchedEffect(Unit). someone said this leaks, is that true and what's the right effect to use", "should_trigger": true},
+  {"query": "our app's memory keeps climbing during a long session even though LeakCanary is quiet. how do I find memory waste that isn't a leak", "should_trigger": true},
+  {"query": "can you check this custom HeaderView that registers with SessionManager in its constructor? I think it keeps HomeActivity alive", "should_trigger": true},
+  {"query": "how do I capture a heap dump from the command line on a debuggable build and analyze it without Android Studio", "should_trigger": true},
+  {"query": "we have 80 threads at startup and memory jumps by ~80MB, the executor behind our prefs wrapper is a cachedThreadPool. is that the reason", "should_trigger": true},
+  {"query": "input dispatching timed out ANR in HomeActivity.onCreate, main thread stack attached, what's blocking", "should_trigger": false},
+  {"query": "our LazyColumn drops frames when scrolling fast, compose compiler report says the item composable isn't skippable", "should_trigger": false},
+  {"query": "what's the best image loading library for compose in 2026, coil or glide", "should_trigger": false},
+  {"query": "explain kotlin weak references vs soft references for a java interview question", "should_trigger": false},
+  {"query": "reduce our APK size, R8 keep rules seem too broad", "should_trigger": false},
+  {"query": "set up Firebase Crashlytics in our Android app with gradle kotlin dsl", "should_trigger": false},
+  {"query": "native crash in libc.so SIGSEGV in our NDK image filter, tombstone attached", "should_trigger": false},
+  {"query": "cold start takes 2.5 seconds on low-end devices, perfetto trace attached, what's slow in bindApplication", "should_trigger": false},
+  {"query": "our web app's node server memory grows until the container OOMs, heap snapshot attached", "should_trigger": false},
+  {"query": "migrate our fragments from LiveData to StateFlow, no performance concerns, just the API change", "should_trigger": false}
+]
