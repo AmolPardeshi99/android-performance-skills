@@ -1,14 +1,16 @@
 ---
 name: android-performance-memory-leak-prevention
 description: >
-  Investigates Android memory leaks and OOMs, and reviews Android code for leaks and memory
-  waste. Use when the user shares a LeakCanary trace, a heap dump, an OutOfMemoryError, a
-  dumpsys meminfo output, or says memory keeps growing; or asks for a leak-focused review of
-  Kotlin or Java code (Activities, Fragments, ViewBinding, custom Views, ViewModels, Compose
-  effects, coroutine or Rx scopes, DI scopes, listeners, Handlers, WebView, bitmaps, thread
-  pools). Covers View-based and Compose UIs, Dagger/Hilt and Koin, coroutines and RxJava.
-  Use it even when the user only asks whether a reference is safe to hold, which Context to
-  use, or how to clean up in onDestroyView. Not for ANRs or jank (use the ANR skill).
+  Investigates Android memory leaks, OOMs, and memory waste, and reviews Android code for them.
+  Use whenever an Android question involves something staying in memory too long: a LeakCanary
+  trace, a heap dump (including how to capture or analyze one from the command line), an
+  OutOfMemoryError, dumpsys meminfo, memory or thread count that keeps growing, or a leak review
+  of Activities, Fragments, ViewBinding, custom Views, ViewModels, Compose effects, coroutine or
+  Rx scopes, DI scopes, listeners, Handlers, WebView, bitmaps, or executors. Also use it for
+  short questions such as "is it OK to hold this Context or listener here", which Context a
+  singleton should keep, whether a register/addListener call needs a matching remove, or what to
+  clear in onDestroyView. Covers Views and Compose, Dagger/Hilt and Koin, coroutines and RxJava.
+  Not for ANRs or jank (use the ANR skill).
 license: Apache-2.0
 metadata:
   version: "2.0.0"

@@ -1,16 +1,17 @@
 ---
 name: android-performance-anr-and-jank-prevention
 description: >
-  Diagnoses Android ANRs and jank from traces, and reviews Android code for main-thread
-  blocking. Use when the user shares an ANR trace, a Play Console or Crashlytics ANR cluster,
-  a bugreport, or a Perfetto trace and asks why the app froze; or asks for a performance-focused
-  review of Kotlin or Java code (Activities, Fragments, Compose, receivers, services, DI modules,
-  startup code, SDK initialization). Covers main-thread I/O, DI graph cost, first-touch class
-  init (large enums, ICU/SimpleDateFormat, reflection), BroadcastReceiver and process isolation,
-  startup that leaves no gap for input, third-party SDK and low-end device ANRs, and catching
-  regressions per release. Use it even when the user only says the app freezes, hangs, is
-  slow to start, drops frames, or asks whether something is safe on the main thread. Not for
-  memory leaks or OOMs (use the memory-leak skill).
+  Diagnoses Android ANRs and jank and reviews Android code for main-thread blocking. Use
+  whenever an Android question involves an ANR, a freeze, slow startup, dropped frames, or
+  whether work is safe on the main thread: an ANR trace or /data/anr file, a Play Console or
+  Crashlytics ANR cluster or rate, a bugreport, a Perfetto startup or jank trace, or a
+  performance review of Activities, Fragments, Compose, RecyclerView adapters, receivers,
+  services, DI modules, Application.onCreate, or SDK init. Also use it for short questions such
+  as "is X OK in onCreate", SharedPreferences or disk reads on main, splitting push or FCM into
+  its own process, and stack frames like SimpleDateFormat, static initializers, or Dagger factories. Covers
+  main-thread I/O, DI graph cost, first-touch class init, receivers and processes, startup input
+  gaps, third-party SDKs on low-end devices, and release regressions. Not for memory leaks or
+  OOMs (use the memory-leak skill).
 license: Apache-2.0
 metadata:
   version: "2.0.0"
