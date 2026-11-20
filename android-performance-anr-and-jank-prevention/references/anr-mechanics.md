@@ -71,5 +71,6 @@ next, not the work that used up the time. That is why a second signal is require
 ## Vitals thresholds
 
 Google Play's bad-behavior threshold for user-perceived ANR rate is 0.47% of daily active users
-overall, and 8% on any single device model. User-perceived ANRs are mostly input ANRs, so a
-background receiver ANR may count toward the total ANR rate but not the user-perceived one.
+overall, and 8% on any single device model. Play counts only `Input dispatching timed out` ANRs
+as user-perceived, so a broadcast, service, or job ANR counts toward the total ANR rate but not
+the user-perceived one.

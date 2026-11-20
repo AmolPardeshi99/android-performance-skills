@@ -53,14 +53,19 @@ fun ItemDetail(itemId: String) {
 
 ## Context in remembered objects
 
-```kotlin
-// ❌ Keeps the old Activity after rotation
-val context = LocalContext.current
-val client = remember { LocationServices.getFusedLocationProviderClient(context) }
+`LocalContext.current` is usually the Activity. Remembering an object built from it is fine
+while it stays inside the composition: when the Activity is recreated, the composition and its
+remembered values go with it. It leaks when that object is handed to something that outlives
+the Activity, such as a singleton, an app-scoped cache, or a ViewModel.
 
-// ✅
+```kotlin
+// ❌ The app-wide cache keeps the first Activity alive after it is destroyed
+val context = LocalContext.current
+val player = remember { PlayerCache.getOrCreate { VideoPlayer(context) } }
+
+// ✅ Anything that can outlive the screen gets the application Context
 val appContext = LocalContext.current.applicationContext
-val client = remember { LocationServices.getFusedLocationProviderClient(appContext) }
+val player = remember { PlayerCache.getOrCreate { VideoPlayer(appContext) } }
 ```
 
 ## Latest values in long-lived callbacks
