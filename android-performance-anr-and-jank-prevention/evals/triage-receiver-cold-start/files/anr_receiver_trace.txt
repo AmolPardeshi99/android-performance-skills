@@ -1,0 +1,18 @@
+----- pid 21734 at 2026-03-02 09:14:51.210 -----
+Cmd line: com.example.shop
+Subject: Broadcast of Intent { act=com.google.android.c2dm.intent.RECEIVE flg=0x11000010 pkg=com.example.shop cmp=com.example.shop/com.example.push.PushReceiver }
+
+"main" prio=5 tid=1 Runnable
+  | group="main" sCount=0 ucsCount=0 flags=0 obj=0x72a1e6f8 self=0xb400007a1e0c4c00
+  | state=R schedstat=( 9912003418 112093511 2112 ) utm=921 stm=70 core=3 HZ=100
+  at com.example.design.IconStyle.<clinit>(IconStyle.kt:1312)
+  at com.example.home.HomeWidgetRegistry.<init>(HomeWidgetRegistry.kt:41)
+  at com.example.di.DaggerAppComponent$AppComponentImpl.homeWidgetRegistry(DaggerAppComponent.java:9021)
+  at com.example.di.DaggerAppComponent$AppComponentImpl.injectShopApp(DaggerAppComponent.java:8810)
+  at com.example.ShopApp.onCreate(ShopApp.kt:58)
+  at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1316)
+  at android.app.ActivityThread.handleBindApplication(ActivityThread.java:7012)
+  at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2236)
+  at android.os.Handler.dispatchMessage(Handler.java:106)
+  at android.os.Looper.loop(Looper.java:294)
+  at android.app.ActivityThread.main(ActivityThread.java:8177)

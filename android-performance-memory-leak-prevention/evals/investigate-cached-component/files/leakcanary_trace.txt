@@ -1,0 +1,14 @@
+┬───
+│ GC Root: Static field
+│
+├─ com.example.auth.SignInComponentHolder class
+│    Leaking: NO (a class is never leaking)
+│    ↓ static SignInComponentHolder.component
+│                                   ~~~~~~~~~
+├─ com.example.auth.DaggerSignInComponent$SignInComponentImpl instance
+│    Leaking: UNKNOWN
+│    ↓ DaggerSignInComponent$SignInComponentImpl.activity
+│                                                ~~~~~~~~
+╰→ com.example.auth.SignInActivity instance
+     Leaking: YES (ObjectWatcher was watching this because com.example.auth.SignInActivity received Activity#onDestroy() callback and Activity#mDestroyed is true)
+     Retaining 3.4 MB in 41210 objects

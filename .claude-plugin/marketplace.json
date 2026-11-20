@@ -1,0 +1,23 @@
+{
+  "name": "android-performance-skills",
+  "owner": {
+    "name": "Amol Pardeshi",
+    "url": "https://github.com/AmolPardeshi99"
+  },
+  "metadata": {
+    "description": "Agent skills for diagnosing and preventing ANRs, jank, and memory leaks in Android apps.",
+    "version": "2.0.0"
+  },
+  "plugins": [
+    {
+      "name": "android-performance",
+      "description": "ANR and jank triage and review, plus memory-leak investigation and review, for Android (Views and Compose, Dagger/Hilt and Koin, Coroutines and RxJava).",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./android-performance-anr-and-jank-prevention",
+        "./android-performance-memory-leak-prevention"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {"query": "play console is showing 0.6% user perceived ANR rate for our latest release and the top cluster is 'Input dispatching timed out' in HomeActivity.onCreate. pasting the main thread stack below, can you tell me what's actually blocking", "should_trigger": true},
+  {"query": "got this from /data/anr after the app froze on a redmi with 3gb ram, main thread is Blocked waiting to lock held by thread 41. what does that mean and whats the fix", "should_trigger": true},
+  {"query": "Can you review app/src/main/java/com/acme/push/PushReceiver.kt and the Application class? We're seeing broadcast ANRs on cold start and I want to know if the receiver is doing too much.", "should_trigger": true},
+  {"query": "is it safe to call getSharedPreferences(\"session\").getString() inside onCreate of our launcher activity or will that cause problems on slow phones", "should_trigger": true},
+  {"query": "I captured a perfetto trace of our cold start (startup.perfetto-trace in the repo root). bindApplication takes 1.8s. help me figure out what's inside it", "should_trigger": true},
+  {"query": "our home screen inflates like 30 custom views and the first tap after launch sometimes ANRs. ideas? we're still on XML views + Dagger 2", "should_trigger": true},
+  {"query": "PR review please: this diff adds a new @Inject field for the loyalty client in MainActivity and calls sdk.init() in Application.onCreate. anything risky for startup or ANRs?", "should_trigger": true},
+  {"query": "why does our scrolling feed drop frames on a Moto G? onBindViewHolder formats dates and the list is a compose LazyColumn inside a fragment", "should_trigger": true},
+  {"query": "SimpleDateFormat shows up at the top of a bunch of ANR stacks in crashlytics with LocaleData.initLocaleData under it. is that really slow?", "should_trigger": true},
+  {"query": "we moved FCM handling to android:process=\":push\" but now token refresh isn't arriving in the main process. how should the handoff work without ANRing", "should_trigger": true},
+  {"query": "LeakCanary says MainActivity is leaking through a static field in our ImageLoader singleton, how do I fix", "should_trigger": false},
+  {"query": "our app crashes with OutOfMemoryError when users open the gallery after a few minutes, heap dump attached", "should_trigger": false},
+  {"query": "can you write a Macrobenchmark test module for our app? just need the gradle setup and one cold startup test, nothing else", "should_trigger": false},
+  {"query": "set up Perfetto recording config for GPU memory and battery drain on a Pixel 8, I need the .pftxt file", "should_trigger": false},
+  {"query": "convert this XML layout with a ConstraintLayout and two RecyclerViews to Jetpack Compose", "should_trigger": false},
+  {"query": "our app crashes with NetworkOnMainThreadException on Android 14 only in release builds, stack trace below", "should_trigger": false},
+  {"query": "how do I make my Retrofit calls retry with exponential backoff using coroutines", "should_trigger": false},
+  {"query": "what is the difference between Dispatchers.IO and Dispatchers.Default in kotlin coroutines in general, for a blog post I'm writing", "should_trigger": false},
+  {"query": "upgrade our project to AGP 9 and fix the deprecated build APIs", "should_trigger": false},
+  {"query": "the iOS version of our app hangs on launch, here's the Xcode hang report", "should_trigger": false}
+]

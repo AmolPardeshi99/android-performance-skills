@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: investigate-cached-component
+expected_outcome: |
+  Runs the investigate task, identifies the static SignInComponentHolder.component field as
+  the reference to break, fixes it by keeping the component in the Activity, and explains
+  how to verify.
+context:
+  scaffold_script: place-files.sh

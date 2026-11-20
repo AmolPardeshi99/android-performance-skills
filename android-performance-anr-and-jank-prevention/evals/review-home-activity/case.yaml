@@ -1,0 +1,7 @@
+schema_version: "1.1"
+name: review-home-activity
+expected_outcome: |
+  Runs the review task, grades findings by severity with line references, gives fixes in
+  RxJava and Dagger terms, and lists the onResume coroutine as a dismissed candidate.
+context:
+  scaffold_script: place-files.sh

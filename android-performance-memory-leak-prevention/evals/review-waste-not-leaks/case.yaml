@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: review-waste-not-leaks
+expected_outcome: |
+  Runs the review task. Dismisses the correctly scoped binding, observer, click listener, and
+  application-context image loader as safe. Flags the per-ViewModel thread pool that is never
+  shut down and the SharedFlow replay cache pinning decoded pages as memory waste that
+  LeakCanary does not report, with fixes and a way to measure them.
+context:
+  scaffold_script: place-files.sh

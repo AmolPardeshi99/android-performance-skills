@@ -1,0 +1,21 @@
+name: Validate skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check skills, links, evals, and marketplace
+        run: python3 tools/validate_skills.py
+      - name: Check shell scripts
+        run: |
+          find . -name '*.sh' -not -path './.git/*' -print0 | xargs -0 -n1 bash -n
+          shellcheck --version >/dev/null 2>&1 && find . -name '*.sh' -not -path './.git/*' -print0 | xargs -0 shellcheck -S warning || true

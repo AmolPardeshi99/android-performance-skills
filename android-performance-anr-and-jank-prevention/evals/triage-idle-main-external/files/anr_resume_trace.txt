@@ -1,0 +1,20 @@
+----- pid 30211 at 2026-04-11 18:02:37.904 -----
+Cmd line: com.example.shop
+Subject: Input dispatching timed out (com.example.shop/com.example.shop.MainActivity is not responding. Waited 5001ms for FocusEvent(hasFocus=true))
+
+"main" prio=5 tid=1 Native
+  | group="main" sCount=1 ucsCount=0 flags=1 obj=0x72a1e6f8 self=0xb400007a1e0c4c00
+  | state=S schedstat=( 412880313 18443021 611 ) utm=36 stm=5 core=6 HZ=100
+  native: #00 pc 000a33b8  /apex/com.android.runtime/lib64/bionic/libc.so (__epoll_pwait+8)
+  native: #01 pc 00010dd4  /system/lib64/libutils.so (android::Looper::pollOnce(int, int*, int*, void**)+180)
+  at android.os.MessageQueue.nativePollOnce(Native method)
+  at android.os.MessageQueue.next(MessageQueue.java:335)
+  at android.os.Looper.loopOnce(Looper.java:161)
+  at android.os.Looper.loop(Looper.java:288)
+  at android.app.ActivityThread.main(ActivityThread.java:7941)
+  at java.lang.reflect.Method.invoke(Native method)
+  at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548)
+  at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:936)
+
+"RenderThread" prio=7 tid=14 Native
+  at (native) epoll_wait
