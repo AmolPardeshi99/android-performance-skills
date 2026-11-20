@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: triage-idle-main-external
+expected_outcome: |
+  Runs the triage task. Sees that main is idle in nativePollOnce, that system_server and
+  kswapd were saturated with load far above the core count, and that the OEM freezer thawed
+  the process right before the ANR. Labels it external, does not invent a code fix in
+  MainActivity, and suggests tagging such ANRs and checking the cluster.
+context:
+  scaffold_script: place-files.sh
