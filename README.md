@@ -170,10 +170,15 @@ python3 tools/validate_skills.py
 cd android-performance-anr-and-jank-prevention && claude plugin eval . --scaffold
 ```
 
+```bash
+# Check which skill loads for each trigger query (real, billed model runs)
+python3 tools/trigger-evals/check_triggers.py tools/trigger-evals/<file>.json <skill-name>
+```
+
 Each case folder holds the user's prompt (`prompt.md`), what a good answer does
 (`case.yaml`), one check per file in `graders/`, and any input files in `files/`. To tune a
 description, give the matching file in `tools/trigger-evals/` to `skill-creator`'s description
-optimization loop.
+optimization loop. See [tools/trigger-evals/README.md](tools/trigger-evals/README.md).
 
 ## Contributing
 
